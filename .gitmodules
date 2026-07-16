@@ -6,3 +6,9 @@
 	path = core
 	url = https://github.com/HSSkyBoy/Vector.git
 	branch = master
+[submodule "libxposed/api"]
+	path = libxposed/api
+	url = https://github.com/libxposed/api.git
+[submodule "libxposed/service"]
+	path = libxposed/service
+	url = https://github.com/libxposed/service.git
