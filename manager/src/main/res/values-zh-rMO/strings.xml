@@ -17,23 +17,23 @@
 
     <!-- Home Screen -->
     <string name="home_shizuku_warning">Shizuku 酱没睡醒喵...</string>
-    <string name="home_shizuku_optional_summary">只是可选扩展喵，不会耽误 NPatch 的核心猫技。</string>
+    <string name="home_shizuku_optional_summary">只是可选扩展喵，不会耽误 MTPatch 的核心猫技。</string>
     <string name="home_api_version">API 核心版本</string>
-    <string name="home_npatch_version">NP猫猫等级</string>
+    <string name="home_mtpatch_version">NP猫猫等级</string>
     <string name="home_framework_version">猫猫核心版本</string>
     <string name="home_system_version">猫窝系统版本</string>
     <string name="home_device">猫爬架型号</string>
     <string name="home_system_abi">猫猫系统底层架构 (ABI)</string>
     <string name="home_info_copied">已揣入肉垫（剪贴板）</string>
     <string name="home_support">寻求投喂支持</string>
-    <string name="home_about">关于 NPatch</string>
-    <string name="home_description">NPatch 是一款免费且迭代于 LSPatch 的，基于 LSPosed 核心的免 Root 的 Xposed 框架喵。让你的猫猫无需 Root 也能玩出新花样！</string>
+    <string name="home_about">关于 MTPatch</string>
+    <string name="home_description">MTPatch 是一款免费且迭代于 LSPatch 的，基于 LSPosed 核心的免 Root 的 Xposed 框架喵。让你的猫猫无需 Root 也能玩出新花样！</string>
 
     <!-- About Screen -->
     <string name="about_view_source_code"><![CDATA[窥视喵星源码 %1$s]]></string>
-    <string name="about_author_summary">NPatch大猫猫的育猫师</string>
+    <string name="about_author_summary">MTPatch大猫猫的育猫师</string>
     <string name="about_disclaimer_title">猫咪条约</string>
-    <string name="about_disclaimer_body">NPatch 仅供学习、研究以及合法的应用兼容性工作使用喵。请尊重当地法律、应用条款以及原开发者的权益。在你的猫爬架上运行修补 App 和挂件的后果需由你自己承担喵，开发者不负责任何猫窝坍塌、小鱼干数据丢失或其他意外伤害喵。</string>
+    <string name="about_disclaimer_body">MTPatch 仅供学习、研究以及合法的应用兼容性工作使用喵。请尊重当地法律、应用条款以及原开发者的权益。在你的猫爬架上运行修补 App 和挂件的后果需由你自己承担喵，开发者不负责任何猫窝坍塌、小鱼干数据丢失或其他意外伤害喵。</string>
     <string name="about_links_title">喵星传送门</string>
     <string name="about_official_website">猫爬架官网</string>
     <string name="about_link_website_summary">传送到官方据点</string>
@@ -41,7 +41,7 @@
     <string name="about_link_telegram_summary">订阅喵星频道，掌握第一手动向</string>
     <string name="about_acknowledgments_title">全宇宙致谢（挨个蹭蹭）</string>
     <string name="about_ack_rovo89_summary">Xposed 框架的老祖宗，一切模块化捕猎生态的起源与猫薄荷奠基者喵。</string>
-    <string name="about_ack_jingmatrix_summary">Vector 大猫工匠，其优秀的框架工作为 NPatch 的快乐迭代提供了重要的骨架与启发喵。</string>
+    <string name="about_ack_jingmatrix_summary">Vector 大猫工匠，其优秀的框架工作为 MTPatch 的快乐迭代提供了重要的骨架与启发喵。</string>
     <string name="about_ack_lsposed_team_summary">感谢 LSPosed 团队，是打造现代化 Xposed 钢筋骨架的顶级猫工匠。</string>
     <string name="about_ack_lspatch_summary">感谢 LSPatch 先行者，你们开辟了不用 Root 也能玩乐的领地。</string>
     <string name="about_ack_libxposed_summary">感谢 LibXposed，为开发者的猫爪带来了秩序与类型安全。</string>
@@ -86,7 +86,7 @@
     <string name="patch_from_installed_modules">挑选已就绪的 Xposed 挂件</string>
     <string name="patch_mode">打包套路</string>
     <string name="patch_local">居家模式</string>
-    <string name="patch_local_desc">不把挂件塞进去。想来就来想走就走喵，无需重新制作。\n但这只猫只能在有NPatch大猫猫的爬架上撒欢喵。</string>
+    <string name="patch_local_desc">不把挂件塞进去。想来就来想走就走喵，无需重新制作。\n但这只猫只能在有MTPatch大猫猫的爬架上撒欢喵。</string>
     <string name="patch_integrated">合体模式</string>
     <string name="patch_integrated_desc">直接把挂件缝进App里。离了管理器也能跑，但没法随时调教配置喵。\n适合送去没有猫猫的陌生人家里住。</string>
     <string name="patch_embed_modules">缝入挂件</string>
@@ -128,7 +128,7 @@
     <!-- Welcome Screen -->
         <string name="welcome_version">版本 %1$s</string>
     <string name="welcome_intro_content">专为免 Root 猫窝打造的现代化神奇挂件注入与大猫猫修补工具喵。</string>
-    <string name="welcome_intro_detail">NPatch 能在不用 Root 的爬架上，通过悄悄改装 APK 把 Xposed 加载器塞进去喵。居家模式得搭配大猫猫管理器来随时调教挂件与领地，但撒欢时不需要管理器在后台守着喵；合体模式直接把挂件缝进 App 肚子里，适合送去没有管理器住的陌生人家里独立跑跳喵。Shizuku 酱只是帮忙开几个便利小后门，不是 NPatch 核心修补、挂件加载和基础管理的必需品喵。</string>
+    <string name="welcome_intro_detail">MTPatch 能在不用 Root 的爬架上，通过悄悄改装 APK 把 Xposed 加载器塞进去喵。居家模式得搭配大猫猫管理器来随时调教挂件与领地，但撒欢时不需要管理器在后台守着喵；合体模式直接把挂件缝进 App 肚子里，适合送去没有管理器住的陌生人家里独立跑跳喵。Shizuku 酱只是帮忙开几个便利小后门，不是 MTPatch 核心修补、挂件加载和基础管理的必需品喵。</string>
     <string name="welcome_permission_title">打通猫窝管道</string>
     <string name="welcome_permission_summary">开始撒欢前，请先解开以下爪印束缚以确保核心猫技正常施展喵。</string>
     <string name="welcome_permission_storage_title">翻找储藏室权限</string>
@@ -136,7 +136,7 @@
     <string name="welcome_permission_applist_title">清点住户名单</string>
     <string name="welcome_permission_applist_summary">用来打探已经住下哪些 Apps 邻居，方便你一爪子精准逮住想要修补的目标喵。</string>
     <string name="welcome_optional_title">可选扩展：Shizuku 酱</string>
-    <string name="welcome_optional_summary">只是可选扩展喵，就算没连上也不耽误 NPatch 的核心猫技正常发挥。</string>
+    <string name="welcome_optional_summary">只是可选扩展喵，就算没连上也不耽误 MTPatch 的核心猫技正常发挥。</string>
     <string name="welcome_permission_granted">肉垫已盖章</string>
     <string name="welcome_permission_authorize">这就去按爪</string>
 

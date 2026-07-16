@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "top.nkbe.npatch.share"
+    namespace = "top.nkbe.mtpatch.share"
 
     buildFeatures {
         androidResources = false

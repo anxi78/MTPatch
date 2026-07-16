@@ -15,7 +15,7 @@ android {
             proguardFiles("proguard-rules.pro")
         }
     }
-    namespace = "top.nkbe.npatch.metaloader"
+    namespace = "top.nkbe.mtpatch.metaloader"
 }
 
 androidComponents.onVariants { variant ->
@@ -27,7 +27,7 @@ androidComponents.onVariants { variant ->
     } else {
         buildDirProvider.dir("intermediates/dex/$variantLowered/mergeDex$variantCapped")
     }
-    val copyDestination = rootProject.layout.projectDirectory.dir("out/assets/${variant.name}/npatch")
+    val copyDestination = rootProject.layout.projectDirectory.dir("out/assets/${variant.name}/mtpatch")
 
     val copyDexTask = tasks.register<Copy>("copyDex$variantCapped") {
         dependsOn("assemble$variantCapped")

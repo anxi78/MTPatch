@@ -10,8 +10,8 @@ import org.gradle.kotlin.dsl.extra
 plugins {
     alias(libs.plugins.agp.lib) apply false
     alias(libs.plugins.agp.app) apply false
-    alias(npatch.plugins.compose.compiler) apply false
-    alias(npatch.plugins.kotlin.android) apply false
+    alias(mtpatch.plugins.compose.compiler) apply false
+    alias(mtpatch.plugins.kotlin.android) apply false
 }
 
 buildscript {
@@ -42,7 +42,7 @@ val (coreCommitCount, coreLatestTag) = runCatching {
 }.getOrNull() ?: (3047 to "2.0")
 
 // sync from https://github.com/JingMartix/LSPosed/blob/master/build.gradle.kts
-val defaultManagerPackageName by extra("top.nkbe.npatch")
+val defaultManagerPackageName by extra("top.nkbe.mtpatch")
 val apiCode by extra(101)
 val verCode by extra(commitCount)
 val verName by extra("1.0.5")
@@ -62,7 +62,7 @@ tasks.register<Delete>("clean") {
 
 listOf("Debug", "Release").forEach { variant ->
     tasks.register("build$variant") {
-        description = "Build NPatch with $variant"
+        description = "Build MTPatch with $variant"
         dependsOn(tasks.findByPath(":jar:build$variant") ?: "jar:build$variant")
         dependsOn(tasks.findByPath(":manager:build$variant") ?: "manager:build$variant")
     }

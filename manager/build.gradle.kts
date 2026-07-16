@@ -6,14 +6,14 @@ val verCode: Int by rootProject.extra
 val verName: String by rootProject.extra
 val coreVerCode: Int by rootProject.extra
 val coreVerName: String by rootProject.extra
-val miuixVersion = npatch.versions.miuix.get()
+val miuixVersion = mtpatch.versions.miuix.get()
 
 plugins {
     alias(libs.plugins.agp.app)
-    alias(npatch.plugins.compose.compiler)
-    alias(npatch.plugins.google.devtools.ksp)
-    alias(npatch.plugins.rikka.tools.refine)
-    alias(npatch.plugins.kotlin.android)
+    alias(mtpatch.plugins.compose.compiler)
+    alias(mtpatch.plugins.google.devtools.ksp)
+    alias(mtpatch.plugins.rikka.tools.refine)
+    alias(mtpatch.plugins.kotlin.android)
     id("kotlin-parcelize")
 }
 
@@ -59,7 +59,7 @@ android {
         kotlinCompilerExtensionVersion = "1.5.15"
     }
 
-    namespace = "top.nkbe.npatch"
+    namespace = "top.nkbe.mtpatch"
 
     applicationVariants.all {
         kotlin.sourceSets {
@@ -81,7 +81,7 @@ afterEvaluate {
 
             val targetDir = layout.buildDirectory.dir("intermediates/assets/$variantLowered/merge${variantCapped}Assets")
             doFirst {
-                delete(targetDir.map { it.file("npatch/loader.dex") })
+                delete(targetDir.map { it.file("mtpatch/loader.dex") })
             }
             into(targetDir)
 
@@ -96,7 +96,7 @@ afterEvaluate {
             dependsOn("assemble$variantCapped")
             from(variant.outputs.map { it.outputFile })
             into("${rootProject.projectDir}/out/$variantLowered")
-            rename(".*.apk", "NPatch-v$verName-$verCode-$variantLowered.apk")
+            rename(".*.apk", "MTPatch-v$verName-$verCode-$variantLowered.apk")
         }
     }
 }
@@ -107,50 +107,50 @@ dependencies {
     implementation(projects.share.java)
     implementation("vector:daemon-service")
 
-    implementation(platform(npatch.androidx.compose.bom))
-    implementation(npatch.androidx.activity.compose)
-    implementation(npatch.androidx.compose.material.icons.extended)
-    implementation(npatch.androidx.compose.material3)
-    implementation(npatch.androidx.compose.ui)
-    implementation(npatch.androidx.compose.ui.tooling.preview)
-    implementation(npatch.androidx.core.ktx)
+    implementation(platform(mtpatch.androidx.compose.bom))
+    implementation(mtpatch.androidx.activity.compose)
+    implementation(mtpatch.androidx.compose.material.icons.extended)
+    implementation(mtpatch.androidx.compose.material3)
+    implementation(mtpatch.androidx.compose.ui)
+    implementation(mtpatch.androidx.compose.ui.tooling.preview)
+    implementation(mtpatch.androidx.core.ktx)
     implementation(libs.material)
-    implementation(npatch.androidx.datastore.preferences)
-    implementation(npatch.coil.compose)
+    implementation(mtpatch.androidx.datastore.preferences)
+    implementation(mtpatch.coil.compose)
     implementation(libs.gson)
-    implementation(npatch.androidx.lifecycle.viewmodel.compose)
-    implementation(npatch.androidx.navigation3.runtime)
-    implementation(npatch.androidx.navigation3.ui)
+    implementation(mtpatch.androidx.lifecycle.viewmodel.compose)
+    implementation(mtpatch.androidx.navigation3.runtime)
+    implementation(mtpatch.androidx.navigation3.ui)
     implementation(libs.androidx.preference)
-    implementation(npatch.androidx.room.ktx)
-    implementation(npatch.androidx.room.runtime)
+    implementation(mtpatch.androidx.room.ktx)
+    implementation(mtpatch.androidx.room.runtime)
     implementation("com.squareup.okhttp3:okhttp:5.3.2")
 
     implementation(libs.material)
     implementation(libs.gson)
-    implementation(npatch.rikka.shizuku.api)
-    implementation(npatch.rikka.shizuku.provider)
-    implementation(npatch.rikka.refine)
-    //implementation(npatch.raamcosta.compose.destinations)
+    implementation(mtpatch.rikka.shizuku.api)
+    implementation(mtpatch.rikka.shizuku.provider)
+    implementation(mtpatch.rikka.refine)
+    //implementation(mtpatch.raamcosta.compose.destinations)
     implementation(libs.appiconloader)
     implementation(libs.hiddenapibypass)
 
     // MiuiX & Haze
-    implementation(npatch.haze)
-    implementation(npatch.hazeBlur)
-    implementation(npatch.backdrop)
+    implementation(mtpatch.haze)
+    implementation(mtpatch.hazeBlur)
+    implementation(mtpatch.backdrop)
     implementation("top.yukonga.miuix.kmp:miuix-ui:$miuixVersion")
     implementation("top.yukonga.miuix.kmp:miuix-preference:$miuixVersion")
     implementation("top.yukonga.miuix.kmp:miuix-icons:$miuixVersion")
-    implementation(npatch.androidx.webkit)
+    implementation(mtpatch.androidx.webkit)
 
 
-    annotationProcessor(npatch.androidx.room.compiler)
-    compileOnly(npatch.rikka.hidden.stub)
-    ksp(npatch.androidx.room.compiler)
-    //ksp(npatch.raamcosta.compose.destinations.ksp)
+    annotationProcessor(mtpatch.androidx.room.compiler)
+    compileOnly(mtpatch.rikka.hidden.stub)
+    ksp(mtpatch.androidx.room.compiler)
+    //ksp(mtpatch.raamcosta.compose.destinations.ksp)
 
-    debugImplementation(npatch.androidx.compose.ui.tooling)
-    debugImplementation(npatch.androidx.customview)
-    debugImplementation(npatch.androidx.customview.poolingcontainer)
+    debugImplementation(mtpatch.androidx.compose.ui.tooling)
+    debugImplementation(mtpatch.androidx.customview)
+    debugImplementation(mtpatch.androidx.customview.poolingcontainer)
 }

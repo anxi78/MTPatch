@@ -19,21 +19,21 @@
     <!-- Home Screen -->
     <string name="home_shizuku_warning">Shizuku 酱没睡醒喵...</string>
     <string name="home_api_version">API 核心版本</string>
-    <string name="home_npatch_version">NP猫猫等级</string>
+    <string name="home_mtpatch_version">NP猫猫等级</string>
     <string name="home_framework_version">猫猫核心版本</string>
     <string name="home_system_version">猫窝系统版本</string>
     <string name="home_device">猫爬架型号</string>
     <string name="home_system_abi">猫猫系统底层架构 (ABI)</string>
     <string name="home_info_copied">已揣入肉垫（剪贴板）</string>
     <string name="home_support">寻求投喂支持</string>
-    <string name="home_about">关于 NPatch大猫猫</string>
-    <string name="home_description">NPatch 是一款免费且迭代于 LSPatch 的，基于 Vector 核心的免 Root 的 Xposed 框架喵。</string>
+    <string name="home_about">关于 MTPatch大猫猫</string>
+    <string name="home_description">MTPatch 是一款免费且迭代于 LSPatch 的，基于 Vector 核心的免 Root 的 Xposed 框架喵。</string>
 
     <!-- About Screen -->
     <string name="about_view_source_code"><![CDATA[窥视喵星源码 %1$s]]></string>
-    <string name="about_author_summary">NPatch大猫猫的育猫师</string>
+    <string name="about_author_summary">MTPatch大猫猫的育猫师</string>
     <string name="about_disclaimer_title">猫咪条约</string>
-    <string name="about_disclaimer_body">NPatch 仅供学习、研究以及合法的应用兼容性工作使用喵。请尊重当地法律、应用条款以及原开发者的权益。在你的猫爬架上运行修补 App 和挂件的后果需由你自己承担喵，开发者不负责任何猫窝坍塌、小鱼干数据丢失或其他意外伤害喵。</string>
+    <string name="about_disclaimer_body">MTPatch 仅供学习、研究以及合法的应用兼容性工作使用喵。请尊重当地法律、应用条款以及原开发者的权益。在你的猫爬架上运行修补 App 和挂件的后果需由你自己承担喵，开发者不负责任何猫窝坍塌、小鱼干数据丢失或其他意外伤害喵。</string>
     <string name="about_links_title">喵星传送门</string>
     <string name="about_official_website">猫爬架官网</string>
     <string name="about_link_website_summary">传送到官方据点</string>
@@ -41,7 +41,7 @@
     <string name="about_link_telegram_summary">订阅喵星频道，掌握第一手动向</string>
     <string name="about_acknowledgments_title">全宇宙致谢（挨个蹭蹭）</string>
     <string name="about_ack_rovo89_summary">Xposed 框架创始人，一切模块化生态的起源与奠基者。</string>
-    <string name="about_ack_jingmatrix_summary">Vector 作者，其优秀的框架工作为 NPatch 的持续迭代提供了重要基础与启发。</string>
+    <string name="about_ack_jingmatrix_summary">Vector 作者，其优秀的框架工作为 MTPatch 的持续迭代提供了重要基础与启发。</string>
     <string name="about_ack_lsposed_team_summary">感谢 LSPosed 团队，是打造现代化 Xposed 钢筋骨架的顶级猫工匠。</string>
     <string name="about_ack_lspatch_summary">感谢 LSPatch 先行者，你们开辟了不用 Root 也能玩乐的领地。</string>
     <string name="about_ack_libxposed_summary">感谢 LibXposed，为开发者的猫爪带来了秩序与类型安全。</string>
@@ -85,7 +85,7 @@
     <string name="patch_from_installed_modules">挑选已就绪的 Xposed 挂件</string>
     <string name="patch_mode">打包套路</string>
     <string name="patch_local">居家模式</string>
-    <string name="patch_local_desc">不把挂件塞进去。想来就来想走就走喵，无需重新制作。\n但这只猫只能在有NPatch大猫猫的爬架上撒欢喵。</string>
+    <string name="patch_local_desc">不把挂件塞进去。想来就来想走就走喵，无需重新制作。\n但这只猫只能在有MTPatch大猫猫的爬架上撒欢喵。</string>
     <string name="patch_integrated">合体模式</string>
     <string name="patch_integrated_desc">直接把挂件缝进App里。离了管理器也能跑，但没法随时调教配置喵。\n适合送去没有猫猫的陌生人家里住。</string>
     <string name="patch_embed_modules">缝入挂件</string>

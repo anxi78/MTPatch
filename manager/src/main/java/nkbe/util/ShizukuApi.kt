@@ -169,7 +169,7 @@ object ShizukuApi {
         } else {
             iPackageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA, userId)
         }
-        return (app != null) && (app.metaData?.containsKey("npatch") != true)
+        return (app != null) && (app.metaData?.containsKey("mtpatch") != true)
     }
 
     fun uninstallPackage(packageName: String, intentSender: IntentSender) {

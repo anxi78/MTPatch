@@ -41,7 +41,7 @@ android {
             useLegacyPackaging = true
         }
     }
-    namespace = "top.nkbe.npatch.loader"
+    namespace = "top.nkbe.mtpatch.loader"
 }
 
 androidComponents.onVariants { variant ->
@@ -50,11 +50,11 @@ androidComponents.onVariants { variant ->
     val copyDexTask = tasks.register<Copy>("copyDex$variantCapped") {
         dependsOn("assemble$variantCapped")
         doFirst {
-            delete("${rootProject.projectDir}/out/assets/${variant.name}/npatch/loader.dex")
+            delete("${rootProject.projectDir}/out/assets/${variant.name}/mtpatch/loader.dex")
         }
         from(layout.buildDirectory.file("intermediates/dex/${variant.name}/mergeDex$variantCapped/classes.dex"))
         rename("classes.dex", "loader.bin")
-        into("${rootProject.projectDir}/out/assets/${variant.name}/npatch")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/mtpatch")
     }
 
     val copySoTask = tasks.register<Copy>("copySo$variantCapped") {
@@ -63,10 +63,10 @@ androidComponents.onVariants { variant ->
         from(
             fileTree(
                 "dir" to layout.buildDirectory.dir("intermediates/stripped_native_libs/${variant.name}/strip${variantCapped}DebugSymbols/out/lib"),
-                "include" to listOf("**/libnpatch.so")
+                "include" to listOf("**/libmtpatch.so")
             )
         )
-        into("${rootProject.projectDir}/out/assets/${variant.name}/npatch/so")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/mtpatch/so")
     }
 
     tasks.register("copy$variantCapped") {

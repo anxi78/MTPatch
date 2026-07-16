@@ -1,21 +1,21 @@
 # Neo LSPatch Framework
 
-[![Java](https://img.shields.io/badge/Java-ED8B00?logo=OpenJDK&logoColor=white&label=)](https://openjdk.org/) [![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=Kotlin&logoColor=white&label=)](https://kotlinlang.org/) [![Download](https://img.shields.io/github/v/release/7723mod/NPatch?color=orange&logoColor=white&label=&logo=DocuSign)](https://github.com/7723mod/NPatch/releases/latest) [![Total](https://shields.io/github/downloads/7723mod/NPatch/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/7723mod/NPatch/releases)
+[![Java](https://img.shields.io/badge/Java-ED8B00?logo=OpenJDK&logoColor=white&label=)](https://openjdk.org/) [![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=Kotlin&logoColor=white&label=)](https://kotlinlang.org/) [![Download](https://img.shields.io/github/v/release/7723mod/MTPatch?color=orange&logoColor=white&label=&logo=DocuSign)](https://github.com/7723mod/MTPatch/releases/latest) [![Total](https://shields.io/github/downloads/7723mod/MTPatch/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/7723mod/MTPatch/releases)
 
 ## Introduction
 
 > 中文见 [README-ZH.md](README-ZH.md)
 
-NPatch is a rootless implementation of the LSPosed/LSPatch-style framework that injects dex and native libraries into the target APK to provide Xposed API support inside the app process.
+MTPatch is a rootless implementation of the LSPosed/LSPatch-style framework that injects dex and native libraries into the target APK to provide Xposed API support inside the app process.
 
-**Official website: [npatch.nkbe.top](https://npatch.nkbe.top)**
+**Official website: [mtpatch.nkbe.top](https://mtpatch.nkbe.top)**
 
 For the most up-to-date guides, architecture notes, usage details, and release-related explanations, please refer to the official website first. The website is the main source of truth for day-to-day usage and documentation updates.
 
 Key points:
 
 - The Manager does not need to stay in the foreground all the time.
-- NPatch is designed around in-process injection rather than a system-wide Xposed service.
+- MTPatch is designed around in-process injection rather than a system-wide Xposed service.
 - However, the Manager still must be installed and accessible to the system when you want to add or remove modules, or when you want to sync the latest configuration.
 - Module scope and configuration are still managed through the Manager data flow.
 - For local mode and embedded mode differences, please check the official documentation on the website.
@@ -27,14 +27,14 @@ Supported Android versions:
 
 Download:
 
-- Stable releases: [GitHub Releases](https://github.com/7723mod/NPatch/releases)
-- Beta version will only be released via the Telegram channel `@ONPatch`.
+- Stable releases: [GitHub Releases](https://github.com/7723mod/MTPatch/releases)
+- Beta version will only be released via the Telegram channel `@OMTPatch`.
 
 Usage:
 
 - Jar mode
-  - Download `npatch.jar`
-  - Run `java -jar npatch.jar`
+  - Download `mtpatch.jar`
+  - Run `java -jar mtpatch.jar`
 - Manager mode
   - Install `manager.apk` on an Android device
   - Follow the instructions in the manager app

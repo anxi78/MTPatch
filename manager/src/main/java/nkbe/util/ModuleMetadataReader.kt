@@ -85,7 +85,7 @@ object ModuleMetadataReader {
 
         // Patched apps can embed module assets for their own runtime, but they are not standalone
         // Xposed modules and should stay in app management instead of the module list.
-        if (packageInfo?.applicationInfo?.metaData?.containsKey("npatch") == true) {
+        if (packageInfo?.applicationInfo?.metaData?.containsKey("mtpatch") == true) {
             return null
         }
 

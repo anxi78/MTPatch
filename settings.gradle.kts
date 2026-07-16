@@ -27,13 +27,13 @@ dependencyResolutionManagement {
         create("libs") {
             from(files("core/gradle/libs.versions.toml"))
         }
-        create("npatch") {
-            from(files("gradle/npatch.versions.toml"))
+        create("mtpatch") {
+            from(files("gradle/mtpatch.versions.toml"))
         }
     }
 }
 
-rootProject.name = "NPatch"
+rootProject.name = "MTPatch"
 include(
     ":apkzlib",
     ":jar",
