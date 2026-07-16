@@ -109,6 +109,17 @@ public final class LocalInjectedModuleService extends ILSPInjectedModuleService.
         return file.delete();
     }
 
+    @Override
+    public void deleteRemotePreferences(String group) {
+        String safeGroup = safeName(group);
+        PreferenceGroupState groupState = preferenceGroups.remove(safeGroup);
+        if (groupState != null) {
+            groupState.preferences.unregisterOnSharedPreferenceChangeListener(groupState.listener);
+            groupState.callbacks.clear();
+            groupState.preferences.edit().clear().apply();
+        }
+    }
+
     private void notifyPreferenceChanges(PreferenceGroupState groupState) {
         HashMap<String, Object> currentSnapshot = snapshotPreferences(groupState.preferences);
         List<Map.Entry<IBinder, CallbackState>> callbackEntries = new ArrayList<>(groupState.callbacks.entrySet());
