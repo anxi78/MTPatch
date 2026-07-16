@@ -10,6 +10,7 @@ import android.os.RemoteException;
 import org.lsposed.lspd.service.ILSPInjectedModuleService;
 import org.lsposed.lspd.service.IRemotePreferenceCallback;
 
+import io.github.libxposed.service.HookedProcess;
 import io.github.libxposed.service.IHotReloadCallback;
 
 import java.io.File;
@@ -160,6 +161,11 @@ public final class LocalInjectedModuleService extends ILSPInjectedModuleService.
         }
 
         editor.apply();
+    }
+
+    @Override
+    public List<HookedProcess> getRunningTargets() {
+        return new ArrayList<>();
     }
 
     @Override
