@@ -12,6 +12,7 @@ import org.lsposed.lspd.service.IRemotePreferenceCallback;
 
 import io.github.libxposed.service.HookedProcess;
 import io.github.libxposed.service.IHotReloadCallback;
+import io.github.libxposed.service.IXposedScopeCallback;
 
 import java.io.File;
 import java.io.Serializable;
@@ -62,6 +63,26 @@ public final class LocalInjectedModuleService extends ILSPInjectedModuleService.
     @Override
     public long getFrameworkProperties() {
         return PROP_CAP_REMOTE;
+    }
+
+    @Override
+    public int getApiVersion() {
+        return 0;
+    }
+
+    @Override
+    public String getFrameworkName() {
+        return "MTPatch";
+    }
+
+    @Override
+    public String getFrameworkVersion() {
+        return "1.0";
+    }
+
+    @Override
+    public long getFrameworkVersionCode() {
+        return 1L;
     }
 
     @Override
@@ -166,6 +187,23 @@ public final class LocalInjectedModuleService extends ILSPInjectedModuleService.
     @Override
     public List<HookedProcess> getRunningTargets() {
         return new ArrayList<>();
+    }
+
+    @Override
+    public List<String> getScope() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public void requestScope(List<String> packages, IXposedScopeCallback callback) {
+        try {
+            callback.onScopeRequestApproved(packages);
+        } catch (RemoteException ignored) {
+        }
+    }
+
+    @Override
+    public void removeScope(List<String> packages) {
     }
 
     @Override
