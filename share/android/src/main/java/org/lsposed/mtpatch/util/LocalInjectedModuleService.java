@@ -10,6 +10,8 @@ import android.os.RemoteException;
 import org.lsposed.lspd.service.ILSPInjectedModuleService;
 import org.lsposed.lspd.service.IRemotePreferenceCallback;
 
+import io.github.libxposed.service.IHotReloadCallback;
+
 import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -158,6 +160,14 @@ public final class LocalInjectedModuleService extends ILSPInjectedModuleService.
         }
 
         editor.apply();
+    }
+
+    @Override
+    public void hotReloadModule(long targetId, Bundle data, IHotReloadCallback callback) {
+        try {
+            callback.onHotReloadResult(2 /* HOT_RELOAD_UNSUPPORTED */, null);
+        } catch (RemoteException ignored) {
+        }
     }
 
     private void notifyPreferenceChanges(PreferenceGroupState groupState) {
