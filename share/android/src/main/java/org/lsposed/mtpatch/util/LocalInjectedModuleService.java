@@ -66,26 +66,6 @@ public final class LocalInjectedModuleService extends ILSPInjectedModuleService.
     }
 
     @Override
-    public int getApiVersion() {
-        return 0;
-    }
-
-    @Override
-    public String getFrameworkName() {
-        return "MTPatch";
-    }
-
-    @Override
-    public String getFrameworkVersion() {
-        return "1.0";
-    }
-
-    @Override
-    public long getFrameworkVersionCode() {
-        return 1L;
-    }
-
-    @Override
     public Bundle requestRemotePreferences(String group, IRemotePreferenceCallback callback) {
         PreferenceGroupState groupState =
                 preferenceGroups.computeIfAbsent(safeName(group), ignored -> new PreferenceGroupState(group));
