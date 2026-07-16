@@ -100,6 +100,15 @@ public final class LocalInjectedModuleService extends ILSPInjectedModuleService.
         return files == null ? new String[0] : files;
     }
 
+    @Override
+    public boolean deleteRemoteFile(String name) {
+        if (!isSafeRelativePath(name)) {
+            return false;
+        }
+        File file = new File(remoteFilesDir(), name);
+        return file.delete();
+    }
+
     private void notifyPreferenceChanges(PreferenceGroupState groupState) {
         HashMap<String, Object> currentSnapshot = snapshotPreferences(groupState.preferences);
         List<Map.Entry<IBinder, CallbackState>> callbackEntries = new ArrayList<>(groupState.callbacks.entrySet());
