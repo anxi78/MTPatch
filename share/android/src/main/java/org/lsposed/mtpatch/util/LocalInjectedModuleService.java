@@ -120,6 +120,46 @@ public final class LocalInjectedModuleService extends ILSPInjectedModuleService.
         }
     }
 
+    @Override
+    public void updateRemotePreferences(String group, Bundle diff) {
+        PreferenceGroupState groupState =
+                preferenceGroups.computeIfAbsent(safeName(group), ignored -> new PreferenceGroupState(group));
+        SharedPreferences.Editor editor = groupState.preferences.edit();
+
+        @SuppressWarnings("unchecked")
+        Set<String> delete = (Set<String>) diff.getSerializable("delete");
+        if (delete != null && !delete.isEmpty()) {
+            for (String key : delete) {
+                editor.remove(key);
+            }
+        }
+
+        @SuppressWarnings("unchecked")
+        HashMap<String, Object> put = (HashMap<String, Object>) diff.getSerializable("put");
+        if (put != null && !put.isEmpty()) {
+            for (Map.Entry<String, Object> entry : put.entrySet()) {
+                Object value = entry.getValue();
+                if (value instanceof String) {
+                    editor.putString(entry.getKey(), (String) value);
+                } else if (value instanceof Integer) {
+                    editor.putInt(entry.getKey(), (Integer) value);
+                } else if (value instanceof Long) {
+                    editor.putLong(entry.getKey(), (Long) value);
+                } else if (value instanceof Float) {
+                    editor.putFloat(entry.getKey(), (Float) value);
+                } else if (value instanceof Boolean) {
+                    editor.putBoolean(entry.getKey(), (Boolean) value);
+                } else if (value instanceof Set) {
+                    @SuppressWarnings("unchecked")
+                    Set<String> stringSet = (Set<String>) value;
+                    editor.putStringSet(entry.getKey(), stringSet);
+                }
+            }
+        }
+
+        editor.apply();
+    }
+
     private void notifyPreferenceChanges(PreferenceGroupState groupState) {
         HashMap<String, Object> currentSnapshot = snapshotPreferences(groupState.preferences);
         List<Map.Entry<IBinder, CallbackState>> callbackEntries = new ArrayList<>(groupState.callbacks.entrySet());
