@@ -17,6 +17,7 @@ import android.util.Log;
 
 import top.nkbe.mtpatch.share.Constants;
 import org.lsposed.lspd.models.Module;
+import org.lsposed.lspd.service.IHotReloadTarget;
 import org.lsposed.lspd.service.ILSPApplicationService;
 
 import java.io.File;
@@ -174,5 +175,12 @@ public class RemoteApplicationService implements ILSPApplicationService {
     @Override
     public boolean isLogMuted() throws RemoteException {
         return false;
+    }
+
+    @Override
+    public void registerHotReloadTarget(String packageName, long hotReloadId, IHotReloadTarget target) throws RemoteException {
+        if (service != null) {
+            service.registerHotReloadTarget(packageName, hotReloadId, target);
+        }
     }
 }

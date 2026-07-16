@@ -18,6 +18,7 @@ import top.nkbe.mtpatch.loader.util.XLog;
 import top.nkbe.mtpatch.util.LocalInjectedModuleService;
 import top.nkbe.mtpatch.util.ModuleLoader;
 import org.lsposed.lspd.models.Module;
+import org.lsposed.lspd.service.IHotReloadTarget;
 import org.lsposed.lspd.service.ILSPApplicationService;
 
 import java.io.File;
@@ -232,5 +233,10 @@ public class NeoLocalApplicationService extends ILSPApplicationService.Stub {
     @Override
     public boolean isLogMuted() throws RemoteException {
         return false;
+    }
+
+    @Override
+    public void registerHotReloadTarget(String packageName, long hotReloadId, IHotReloadTarget target) throws RemoteException {
+        // Local service does not support hot reload
     }
 }

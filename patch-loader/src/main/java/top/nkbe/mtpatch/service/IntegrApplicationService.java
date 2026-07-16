@@ -14,6 +14,7 @@ import top.nkbe.mtpatch.share.Constants;
 import top.nkbe.mtpatch.util.LocalInjectedModuleService;
 import top.nkbe.mtpatch.util.ModuleLoader;
 import org.lsposed.lspd.models.Module;
+import org.lsposed.lspd.service.IHotReloadTarget;
 import org.lsposed.lspd.service.ILSPApplicationService;
 
 import java.io.IOException;
@@ -156,4 +157,8 @@ public class IntegrApplicationService extends ILSPApplicationService.Stub {
         return false;
     }
 
+    @Override
+    public void registerHotReloadTarget(String packageName, long hotReloadId, IHotReloadTarget target) throws RemoteException {
+        // Embedded modules do not support hot reload
+    }
 }

@@ -38,6 +38,7 @@ import dalvik.system.PathClassLoader;
 import io.github.libxposed.api.XposedModule;
 import io.github.libxposed.api.XposedModuleInterface;
 import org.lsposed.lspd.models.Module;
+import org.lsposed.lspd.service.IHotReloadTarget;
 import org.lsposed.lspd.service.ILSPApplicationService;
 import org.matrix.vector.impl.VectorContext;
 import org.matrix.vector.impl.VectorLifecycleManager;
@@ -239,6 +240,11 @@ public class LSPLoader {
         }
 
         @Override
+        public void registerHotReloadTarget(String packageName, long hotReloadId, IHotReloadTarget target) throws RemoteException {
+            base.registerHotReloadTarget(packageName, hotReloadId, target);
+        }
+
+        @Override
         public IBinder asBinder() {
             return base.asBinder();
         }
@@ -271,12 +277,6 @@ public class LSPLoader {
 
             for (String libName : discoverNativeLibraries(module)) {
                 NativeAPI.recordNativeEntrypoint(libName);
-                for (String candidate : buildNativeInitCandidates(module, nativeDir, libName)) {
-                    if (NativeAPI.initializeNativeEntrypoint(libName, candidate)) {
-                        Log.i(TAG, "Prepared native library " + libName + " from " + candidate);
-                        break;
-                    }
-                }
             }
 
             if (module.file != null && module.file.moduleClassNames != null) {
@@ -287,7 +287,7 @@ public class LSPLoader {
                         ctor.setAccessible(true);
                         XposedModule instance = (XposedModule) ctor.newInstance();
 
-                        instance.attachFramework(vectorContext);
+                        instance.attachFramework(vectorContext, () -> {});
 
                         VectorLifecycleManager.INSTANCE.getActiveModules().add(instance);
 

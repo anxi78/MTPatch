@@ -51,7 +51,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
-import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
 import hidden.HiddenApiBridge;
 
@@ -196,7 +195,6 @@ public class LSPApplication {
         // before forkPostCommon is invoke. Otherwise, you will get failure of XResources
 
         if (config.outputLog) {
-            XposedBridge.setLogPrinter(new XposedLogPrinter(0, "MTPatch"));
             installCrashInterceptor(context);
         }
         logInfo("Load modules");
